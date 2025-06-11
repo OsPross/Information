@@ -7,15 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #111827; /* Dark blue-grey background */
             color: #d1d5db; /* Light grey text */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .presentation-wrapper {
+            width: 100%;
+            height: 100%;
             background: #1f2937; /* Slightly lighter dark background */
-            border: 1px solid #374151;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
         }
         .slide {
             position: absolute;
@@ -32,7 +41,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 1rem;
+            padding: 2rem;
         }
         .slide.active {
             opacity: 1;
@@ -103,40 +112,29 @@
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-4">
+<body class="p-4 md:p-8">
 
-    <div class="presentation-wrapper w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+    <div class="presentation-wrapper w-full h-full rounded-2xl shadow-2xl overflow-hidden flex flex-col">
         <!-- Presentation Slides Container -->
-        <div id="presentation-container" class="p-8 md:p-12 relative min-h-[500px]">
+        <div id="presentation-container" class="relative flex-grow">
 
             <!-- Slide 1: Title -->
             <div class="slide active">
-                <h1 class="text-4xl md:text-5xl font-bold text-white">A Guide to Legnica</h1>
-                <h2 class="text-2xl md:text-3xl accent-text mt-2">Shopping & Information Guide</h2>
+                <h1 class="text-4xl md:text-6xl font-bold text-white">A Guide to Legnica</h1>
+                <h2 class="text-2xl md:text-4xl accent-text mt-4">Shopping & Information Guide</h2>
                 <p class="mt-8 text-gray-400">An English Language Project</p>
             </div>
 
             <!-- Slide 2: Introduction -->
             <div class="slide">
-                <h3 class="text-3xl font-bold text-white mb-4">Introduction</h3>
-                <p class="text-lg text-gray-300 max-w-2xl">This guide shows you some useful places in Legnica. It is like an info folder to help you find your way around the city.</p>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Introduction</h3>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl">This guide shows you some useful places in Legnica. It is like an info folder to help you find your way around the city.</p>
             </div>
 
-            <!-- Slide 3: Map -->
-            <div class="slide">
-                <h3 class="text-3xl font-bold text-white mb-4">Map</h3>
-                <div class="bg-gray-800 p-4 rounded-lg text-center border-2 border-gray-700">
-                    <p class="accent-text font-semibold">[ A map visualization would be placed here ]</p>
-                    <p class="mt-4 text-sm text-gray-400 max-w-xl mx-auto">
-                        The cafe, restaurant, and cinema are in the city center area. The flower shop is nearby. The Auchan supermarket is outside the city center.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Slide 4: Auchan -->
+            <!-- Slide 3: Auchan -->
             <div class="slide text-left">
-                <h3 class="text-3xl font-bold text-white mb-6 w-full text-center">🛒 Location 1: Auchan Supermarket</h3>
-                <ul class="list-none space-y-3 text-base md:text-lg text-gray-300 animated-list">
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 w-full text-center">🛒 Location 1: Auchan Supermarket</h3>
+                <ul class="list-none space-y-4 text-base md:text-lg text-gray-300 animated-list max-w-3xl">
                     <li style="animation-delay: 100ms;"><strong class="text-gray-100">Description:</strong> A very big shop where you can find almost everything. It has a large food section with fresh fruits, vegetables, and a bakery. You can also buy clothes, electronics, books, and many things for your house and garden.</li>
                     <li style="animation-delay: 200ms;"><strong class="text-gray-100">Opening Hours:</strong> Mon - Sat: 7 AM - 10 PM, Sun: 9 AM - 9 PM.</li>
                     <li style="animation-delay: 300ms;"><strong class="text-gray-100">Tip:</strong> It's a good place to buy many things at once, so you don't have to visit several different shops.</li>
@@ -151,10 +149,10 @@
                 </ul>
             </div>
             
-            <!-- Slide 5: Ratuszowa Café -->
+            <!-- Slide 4: Ratuszowa Café -->
             <div class="slide text-left">
-                <h3 class="text-3xl font-bold text-white mb-6 w-full text-center">☕ Location 2: Ratuszowa Café</h3>
-                <ul class="list-none space-y-3 text-base md:text-lg text-gray-300 animated-list">
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 w-full text-center">☕ Location 2: Ratuszowa Café</h3>
+                <ul class="list-none space-y-4 text-base md:text-lg text-gray-300 animated-list max-w-3xl">
                     <li style="animation-delay: 100ms;"><strong class="text-gray-100">Description:</strong> A nice and cozy café in the city center. It has a warm atmosphere and is a perfect place to relax, read a book, or chat with friends. They serve different kinds of coffee, tea, and delicious homemade cakes.</li>
                     <li style="animation-delay: 200ms;"><strong class="text-gray-100">Opening Hours:</strong> Mon - Sun: 9 AM - 9 PM.</li>
                     <li style="animation-delay: 300ms;"><strong class="text-gray-100">Tip:</strong> You can see the old Town Hall from the window. It's a very nice view, especially in the evening.</li>
@@ -169,10 +167,10 @@
                 </ul>
             </div>
             
-            <!-- Slide 6: Vis a Vis Restaurant -->
+            <!-- Slide 5: Vis a Vis Restaurant -->
             <div class="slide text-left">
-                <h3 class="text-3xl font-bold text-white mb-6 w-full text-center">🍴 Location 3: Vis a Vis Restaurant</h3>
-                 <ul class="list-none space-y-3 text-base md:text-lg text-gray-300 animated-list">
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 w-full text-center">🍴 Location 3: Vis a Vis Restaurant</h3>
+                 <ul class="list-none space-y-4 text-base md:text-lg text-gray-300 animated-list max-w-3xl">
                     <li style="animation-delay: 100ms;"><strong class="text-gray-100">Description:</strong> A good restaurant with traditional Polish food like 'pierogi' and 'żurek'. It's a great place for a nice dinner with family or friends. The inside is elegant and comfortable.</li>
                     <li style="animation-delay: 200ms;"><strong class="text-gray-100">Opening Hours:</strong> Mon - Sun: 12 PM - 10 PM.</li>
                     <li style="animation-delay: 300ms;"><strong class="text-gray-100">Tip:</strong> The restaurant is in a beautiful, old building, which makes the experience even more special.</li>
@@ -187,10 +185,10 @@
                 </ul>
             </div>
 
-            <!-- Slide 7: Helios Cinema -->
+            <!-- Slide 6: Helios Cinema -->
             <div class="slide text-left">
-                 <h3 class="text-3xl font-bold text-white mb-6 w-full text-center">🎬 Location 4: Helios Cinema</h3>
-                 <ul class="list-none space-y-3 text-base md:text-lg text-gray-300 animated-list">
+                 <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 w-full text-center">🎬 Location 4: Helios Cinema</h3>
+                 <ul class="list-none space-y-4 text-base md:text-lg text-gray-300 animated-list max-w-3xl">
                     <li style="animation-delay: 100ms;"><strong class="text-gray-100">Description:</strong> A modern cinema with multiple screens. It shows the latest movies, including Hollywood blockbusters and Polish films. The seats are comfortable and the sound system is great.</li>
                     <li style="animation-delay: 200ms;"><strong class="text-gray-100">Opening Hours:</strong> Depends on movie showtimes, usually open from noon until late evening.</li>
                     <li style="animation-delay: 300ms;"><strong class="text-gray-100">Tip:</strong> Check their website or app for the schedule and book your tickets online to avoid queues.</li>
@@ -205,10 +203,10 @@
                 </ul>
             </div>
 
-            <!-- Slide 8: SFINKS Flower Studio -->
+            <!-- Slide 7: SFINKS Flower Studio -->
             <div class="slide text-left">
-                 <h3 class="text-3xl font-bold text-white mb-6 w-full text-center">💐 Location 5: SFINKS Flower Studio</h3>
-                 <ul class="list-none space-y-3 text-base md:text-lg text-gray-300 animated-list">
+                 <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 w-full text-center">💐 Location 5: SFINKS Flower Studio</h3>
+                 <ul class="list-none space-y-4 text-base md:text-lg text-gray-300 animated-list max-w-3xl">
                     <li style="animation-delay: 100ms;"><strong class="text-gray-100">Description:</strong> A modern flower studio with many kinds of beautiful, fresh flowers like roses and tulips. You can also buy green plants for your home. The shop has a unique, artistic style.</li>
                     <li style="animation-delay: 200ms;"><strong class="text-gray-100">Opening Hours:</strong> Mon - Fri: 9 AM - 6 PM, Sat: 9 AM - 3 PM.</li>
                     <li style="animation-delay: 300ms;"><strong class="text-gray-100">Tip:</strong> It's a perfect place to buy a gift. The florists are very creative and can make a special bouquet just for you.</li>
@@ -223,9 +221,9 @@
                 </ul>
             </div>
 
-             <!-- Slide 9: The End -->
+             <!-- Slide 8: The End -->
             <div class="slide">
-                <h3 class="text-4xl font-bold text-white">Thank you!</h3>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Thank you!</h3>
             </div>
         </div>
 
